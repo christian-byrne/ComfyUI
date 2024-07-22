@@ -1,0 +1,1113 @@
+IMPORT VIOLATIONS:
+	<module 'Crypto' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/__init__.py'>
+	<module 'Crypto.Cipher._mode_ecb' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Cipher/_mode_ecb.py'>
+	<module 'Crypto.Cipher._mode_cfb'>
+	('Crypto.Hash.SHA256',)
+	<module 'httpcore._backends.anyio' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_backends/anyio.py'>
+	<module 'httpx._transports' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_transports/__init__.py'>
+	<module 'httpx._transports.asgi' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_transports/asgi.py'>
+	<module 'httpcore._sync.connection'>
+	<module 'httpcore._trace' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_trace.py'>
+	<module 'importlib' from '/usr/lib/python3.11/importlib/__init__.py'>
+	<module 'Crypto.Util.strxor'>
+	<module 'httpx._config' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_config.py'>
+	<module 'httpx._utils'>
+	<module 'Crypto.Cipher._mode_ocb'>
+	<module 'httpcore._async.connection_pool'>
+	<module 'Crypto.Cipher._mode_ccm' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Cipher/_mode_ccm.py'>
+	<module 'Crypto.Hash' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Hash/__init__.py'>
+	<module 'Crypto.Protocol' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Protocol/__init__.py'>
+	<module 'cryptography' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/__init__.py'>
+	<module 'Crypto.Cipher._mode_siv' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Cipher/_mode_siv.py'>
+	<module 'httpx._exceptions'>
+	<module 'httpcore._exceptions' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_exceptions.py'>
+	<module 'Crypto.Util._file_system'>
+	('Crypto.Util',)
+	<module 'Crypto.Random' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Random/__init__.py'>
+	<module 'anyio._core._sockets'>
+	<module 'httpcore._utils'>
+	<module 'httpcore._sync'>
+	<module 'httpcore._backends.anyio'>
+	<module 'httpx._compat'>
+	<module 'Crypto.Hash.SHA1' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Hash/SHA1.py'>
+	<module 'Crypto.Util._cpu_features'>
+	<module 'Crypto.Hash.SHA1'>
+	<module 'Crypto.Hash.HMAC'>
+	<module 'httpcore._models'>
+	<module 'anyio.abc._subprocesses'>
+	<module 'httpcore._backends.base' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_backends/base.py'>
+	<module 'httpcore._backends.trio'>
+	<module 'httpx._types' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_types.py'>
+	<module 'httpx._transports.base'>
+	<module 'httpcore._async'>
+	<module 'httpcore._sync.http11'>
+	<module 'Crypto.Cipher._mode_ofb'>
+	<module 'httpcore._api' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_api.py'>
+	<module 'importlib.metadata' from '/usr/lib/python3.11/importlib/metadata/__init__.py'>
+	<module 'httpcore._sync.connection_pool'>
+	<module 'httpcore._backends.base'>
+	<module 'httpx._types'>
+	<module 'httpcore._backends.auto' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_backends/auto.py'>
+	<module 'Crypto.Util.strxor' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Util/strxor.py'>
+	<module 'httpcore._ssl' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_ssl.py'>
+	<module 'cryptography.hazmat.primitives.padding'>
+	<module 'httpcore._async.http11' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_async/http11.py'>
+	<module 'Crypto.Util.number'>
+	<module 'Crypto.Cipher._mode_eax' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Cipher/_mode_eax.py'>
+	<module 'httpx._urlparse' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_urlparse.py'>
+	<module 'httpcore._trace'>
+	<module 'cryptography.hazmat.primitives' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/hazmat/primitives/__init__.py'>
+	<module 'anyio._core._subprocesses' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/anyio/_core/_subprocesses.py'>
+	<module 'httpx._multipart' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_multipart.py'>
+	('httpx._transports',)
+	<module 'httpx._urlparse'>
+	<module 'httpcore._exceptions'>
+	<module 'Crypto.Hash.SHA256' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Hash/SHA256.py'>
+	<module 'httpcore._async' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_async/__init__.py'>
+	<module 'Crypto.Hash.BLAKE2s' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Hash/BLAKE2s.py'>
+	<module 'httpx._status_codes'>
+	<module 'httpcore._sync.connection' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_sync/connection.py'>
+	<module 'Crypto.Util.number' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Util/number.py'>
+	('Crypto.Hash.BLAKE2s',)
+	<module 'Crypto.Cipher._mode_ofb' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Cipher/_mode_ofb.py'>
+	<module 'Crypto.Util.py3compat'>
+	<module 'httpx._compat' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_compat.py'>
+	<module 'httpx._urls'>
+	<module 'Crypto.Hash.HMAC' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Hash/HMAC.py'>
+	<module 'httpx._client'>
+	<module 'httpcore._sync.connection_pool' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_sync/connection_pool.py'>
+	<module 'httpx._utils' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_utils.py'>
+	<module 'httpcore._backends.sync' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_backends/sync.py'>
+	<module 'httpcore._async.connection'>
+	<module 'httpcore._backends.trio' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_backends/trio.py'>
+	<module 'Crypto'>
+	<module 'httpcore._sync' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_sync/__init__.py'>
+	<module 'Crypto.Cipher._mode_cfb' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Cipher/_mode_cfb.py'>
+	<module 'httpx'>
+	<module 'httpx._transports.mock'>
+	<module 'Crypto.Util._file_system' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Util/_file_system.py'>
+	('Crypto.Hash.CMAC',)
+	'compile'
+	('httpcore._sync',)
+	<module 'anyio._core._sockets' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/anyio/_core/_sockets.py'>
+	<module 'httpcore._async.http2' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_async/http2.py'>
+	<module 'Crypto.Hash.BLAKE2s'>
+	<module 'Crypto.Util._raw_api' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Util/_raw_api.py'>
+	<module 'Crypto.Protocol.KDF'>
+	<module 'httpx._decoders' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_decoders.py'>
+	<module 'httpx._transports.wsgi' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_transports/wsgi.py'>
+	<module 'Crypto.Cipher' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Cipher/__init__.py'>
+	<module 'httpcore._sync.http_proxy'>
+	<module 'httpx._models' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_models.py'>
+	<module 'Crypto.Protocol'>
+	<module 'httpcore._backends.auto'>
+	<module 'httpx._content' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_content.py'>
+	('Crypto',)
+	<module 'httpx._status_codes' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_status_codes.py'>
+	<module 'httpcore'>
+	<module 'Crypto.Util' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Util/__init__.py'>
+	<module 'httpx._auth' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_auth.py'>
+	<module 'anyio.abc._subprocesses' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/anyio/abc/_subprocesses.py'>
+	<module 'httpx.__version__'>
+	'import_module'
+	<module 'anyio._core._subprocesses'>
+	<module 'httpcore._async.socks_proxy'>
+	<module 'Crypto.Cipher._mode_eax'>
+	<module 'httpcore._backends' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_backends/__init__.py'>
+	<module 'cryptography.fernet'>
+	<module 'httpcore._sync.socks_proxy'>
+	<module 'httpx._client' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_client.py'>
+	<module 'httpcore' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/__init__.py'>
+	<module 'httpcore._async.http_proxy'>
+	<module 'Crypto.Cipher._mode_cbc'>
+	<module 'Crypto.Hash'>
+	<module 'httpx._content'>
+	<module 'ctypes' from '/usr/lib/python3.11/ctypes/__init__.py'>
+	<module 'httpcore._synchronization' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_synchronization.py'>
+	<module 'cryptography.hazmat.primitives.hmac'>
+	<module 'sniffio._impl'>
+	<module 'Crypto.Cipher._mode_gcm'>
+	<module 'httpcore._async.interfaces'>
+	('httpcore._backends',)
+	<module 'httpx._urls' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_urls.py'>
+	<module 'httpx._api'>
+	<module 'Crypto.Random'>
+	<module 'httpcore._api'>
+	<module 'Crypto.Cipher._mode_ccm'>
+	<module 'Crypto.Hash.CMAC' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Hash/CMAC.py'>
+	('Crypto.Util._cpu_features',)
+	('cryptography.hazmat.primitives.padding',)
+	<module 'Crypto.Cipher.AES' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Cipher/AES.py'>
+	<module 'httpcore._sync.http2'>
+	<module 'Crypto.Cipher._mode_ecb'>
+	<module 'httpx._auth'>
+	<module 'httpcore._async.interfaces' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_async/interfaces.py'>
+	('Crypto.Protocol',)
+	('Crypto.Hash.SHA1',)
+	<module 'httpcore._async.http_proxy' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_async/http_proxy.py'>
+	<module 'Crypto.Cipher._mode_ctr'>
+	<module 'Crypto.Util._cpu_features' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Util/_cpu_features.py'>
+	<module 'httpcore._ssl'>
+	<module 'httpx._multipart'>
+	('Crypto.Cipher.AES',)
+	<module 'Crypto.Util._raw_api'>
+	<module 'httpx' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/__init__.py'>
+	<module 'anyio.abc._sockets'>
+	<module 'Crypto.Protocol.KDF' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Protocol/KDF.py'>
+	<module 'cryptography.hazmat.primitives.ciphers' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/hazmat/primitives/ciphers/__init__.py'>
+	<module 'httpcore._async.http11'>
+	<module 'httpcore._synchronization'>
+	<module 'httpx._api' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_api.py'>
+	<module 'httpx._models'>
+	<module 'httpcore._backends.sync'>
+	<module 'Crypto.Cipher._mode_ctr' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Cipher/_mode_ctr.py'>
+	<module 'Crypto.Util'>
+	<module 'Crypto.Cipher._mode_openpgp' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Cipher/_mode_openpgp.py'>
+	<module 'Crypto.Hash.SHA256'>
+	<module 'httpcore._utils' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_utils.py'>
+	<module 'httpcore._sync.http_proxy' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_sync/http_proxy.py'>
+	<module 'httpx._config'>
+	<module 'Crypto.Cipher._mode_cbc' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Cipher/_mode_cbc.py'>
+	<module 'httpx.__version__' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/__version__.py'>
+	<module 'httpx._transports.base' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_transports/base.py'>
+	<module 'Crypto.Util.py3compat' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Util/py3compat.py'>
+	<module 'httpcore._sync.http11' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_sync/http11.py'>
+	<module 'httpx._main' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_main.py'>
+	<module 'cryptography.hazmat.primitives.hmac' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/hazmat/primitives/hmac.py'>
+	<module 'httpx._transports.mock' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_transports/mock.py'>
+	<module 'httpx._transports'>
+	<module 'Crypto.Cipher.AES'>
+	<module 'httpx._transports.default'>
+	<module 'httpx._transports.wsgi'>
+	<module 'sniffio._impl' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/sniffio/_impl.py'>
+	<module 'httpx._decoders'>
+	<module 'httpcore._sync.http2' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_sync/http2.py'>
+	<module 'httpx._main'>
+	<module 'httpcore._sync.socks_proxy' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_sync/socks_proxy.py'>
+	<module 'Crypto.Cipher._mode_siv'>
+	<module 'cryptography.hazmat.primitives.padding' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/hazmat/primitives/padding.py'>
+	<module 'Crypto.Cipher'>
+	<module 'httpcore._backends.mock' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_backends/mock.py'>
+	<module 'httpx._transports.asgi'>
+	<module 'httpcore._sync.interfaces' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_sync/interfaces.py'>
+	<module 'httpcore._async.http2'>
+	<module 'cryptography.fernet' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/fernet.py'>
+	('Crypto.Hash.HMAC',)
+	<module 'httpcore._models' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_models.py'>
+	<module 'httpcore._backends.mock'>
+	<module 'httpcore._async.connection' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_async/connection.py'>
+	<module 'httpx._transports.default' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_transports/default.py'>
+	<module 'httpcore._async.connection_pool' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_async/connection_pool.py'>
+	<module 'Crypto.Cipher._mode_gcm' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Cipher/_mode_gcm.py'>
+	<module 'Crypto.Hash.CMAC'>
+	<module 'Crypto.Cipher._mode_openpgp'>
+	<module 'anyio.abc._sockets' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/anyio/abc/_sockets.py'>
+	<module 'httpcore._backends'>
+	<module 'httpcore._async.socks_proxy' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpcore/_async/socks_proxy.py'>
+	<module 'httpx._exceptions' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_exceptions.py'>
+	<module 'Crypto.Cipher._mode_ocb' from '/home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/Crypto/Cipher/_mode_ocb.py'>
+	<module 'httpcore._sync.interfaces'>
+
+ARG VIOLATIONS:
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:     <https://tools.ietf.org/html/rfc7541#section-7.1.3>`_), the user may\n        ins
+	(full arg length: 195026)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: A` : http://csrc.nist.gov/publications/nistpubs/800-38a/sp800-38a.pdf\n\n    :undocum
+	(full arg length: 22626)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ocs: https://docs.pydantic.dev/2.7/concepts/models/\n\n    A base class for creating 
+	(full arg length: 172441)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: les](https://docs.anthropic.com/claude/reference/messages-examples)\r\n              
+	(full arg length: 8578)
+	Location: <frozen codecs>:325
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: estz.https://www.googleapis.com/auth/cloud-platform)\x01\xda\x06scopesz\x1cCould not 
+	(full arg length: 4508)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'requote_uri'
+	Called with arg containing 'https://'
+	Preview: 'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 123)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/requests/utils.py:674
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: at:\nhttps://tools.ietf.org/html/rfc7540#section-11.4\n\xe9\x00\x00\x00\x00Nc\x00\x00
+	(full arg length: 3889)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: le `"http://127.0.0.1:8080/"`.\n            ssl_context: An SSL context to use for ve
+	(full arg length: 45156)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'read_token'
+	Called with arg containing 'https://'
+	Preview: _URL=https://help.ubuntu.com/'
+	(full arg length: 38)
+	Location: /usr/lib/python3.11/shlex.py:277
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: et(\'https://example.org\')\n    ```\n\n    **Parameters:**\n\n    * **auth** - *(opt
+	(full arg length: 179441)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview:  to `http://www.example.com/` forwarded via a proxy\n    at `http://localhost:8080`..
+	(full arg length: 62275)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'urlunparse'
+	Called with arg containing 'https://'
+	Preview: 'https://api.anthropic.com/v1/messages'
+	(full arg length: 39)
+	Location: /usr/lib/python3.11/urllib/parse.py:518
+	Function '_coerce_args'
+	Called with arg containing 'https://'
+	Preview: ('https://api.anthropic.com/v1/messages', '', <function _noop at 0x791133f36340>)
+	(full arg length: 81)
+	Location: /usr/lib/python3.11/urllib/parse.py:132
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: once https://github.com/cython/cython/issues/3537 is\n        solved and https://gith
+	(full arg length: 70387)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'update'
+	Called with arg containing 'https://'
+	Preview: b'https://discord.com/api/webhooks/1226397926067273850/8DRvc59pUs0E0SuVGJXJUJSwD_i
+	(full arg length: 115)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/hazmat/primitives/padding.py:157
+	Function 'unquote_unreserved'
+	Called with arg containing 'https://'
+	Preview: 'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 123)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/requests/utils.py:657
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ocs: https://docs.pydantic.dev/2.7/concepts/config/#configuration-with-dataclass-from
+	(full arg length: 12092)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ex`](https://docs.rs/regex) Rust\n              crate, which is non-backtracking and 
+	(full arg length: 299731)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: n [\'https://example.com:443\', HTTP/1.1, ACTIVE, Request Count: 6]>,\n            <H
+	(full arg length: 53347)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: n    https://docs.python.org/library/ipaddress.html#ipaddress.IPv4Network\n    \xda\r
+	(full arg length: 35842)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: nce: https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/
+	(full arg length: 25098)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'read_token'
+	Called with arg containing 'https://'
+	Preview: _URL=https://bugs.launchpad.net/ubuntu/'
+	(full arg length: 51)
+	Location: /usr/lib/python3.11/shlex.py:277
+	Function 'update'
+	Called with arg containing 'https://'
+	Preview: b'https://discord.com/api/webhooks/1226397926067273850/8DRvc59pUs0E0SuVGJXJUJSwD_i
+	(full arg length: 152)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/hazmat/primitives/ciphers/base.py:174
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: els](https://docs.anthropic.com/claude/docs/models-overview) for details.\r\n\r\n    
+	(full arg length: 8575)
+	Location: <frozen codecs>:325
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: ion](https://www.python-httpx.org/api/#asyncclient) for more details.\r\n        http
+	(full arg length: 8598)
+	Location: <frozen codecs>:325
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview:     <http://www.freedesktop.org/software/systemd/man/os-release.html>`_.\n    )\x02r7
+	(full arg length: 126314)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: n [\'https://example.com:443\', HTTP/1.1, ACTIVE, Request Count: 6]>,\n            <A
+	(full arg length: 54977)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: URL("http://\xe4\xb8\xad\xe5\x9b\xbd.icom.museum")\n      assert url.host == "\xe4\xb
+	(full arg length: 74656)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function '_decrypt_data'
+	Called with arg containing 'https://'
+	Preview: b'https://discord.com/api/webhooks/1226397926067273850/8DRvc59pUs0E0SuVGJXJUJSwD_i
+	(full arg length: 124)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/fernet.py:167
+	Function 'update'
+	Called with arg containing 'https://'
+	Preview: b'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 152)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/hazmat/backends/openssl/ciphers.py:146
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: on:\nhttp://www.w3.org/TR/css3-color/#svg-color\n\nA few colors have multiple names r
+	(full arg length: 79222)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: link=https://www.willmcgugan.com]here[/link] to visit my Blogz+:warning-emoji: [bold 
+	(full arg length: 29035)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'getlines'
+	Called with arg containing 'https://'
+	Preview: els](https://docs.anthropic.com/claude/docs/models-overview) for details.\n', '\n', '
+	(full arg length: 76896)
+	Location: /usr/lib/python3.11/linecache.py:46
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: le `"http://127.0.0.1:8080/"`.\n            ssl_context: An SSL context to use for ve
+	(full arg length: 47929)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: from https://github.com/Rapptz/RoboDanny\r\ndef human_join(seq: Sequence[str], *, del
+	(full arg length: 7920)
+	Location: <frozen codecs>:325
+	Function '_monkey_patched_getlines'
+	Called with arg containing 'https://'
+	Preview: ion](https://www.python-httpx.org/api/#client) for more details.\n', '        http_cl
+	(full arg length: 25848)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/xformers/triton/vararg_kernel.py:124
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: PGP: http://tools.ietf.org/html/rfc4880\n\n    :undocumented: __init__\n    c\x05\x00
+	(full arg length: 13241)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:      https://github.com/cython/cython/issues/2753).\n    \xda\x05otherro\x00\x00\x00c
+	(full arg length: 165914)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview:  %s (http://www.dabeaz.com/ply)Fz no p_error() function is definedz\x02%sTz;%s:%d: Sy
+	(full arg length: 340552)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: (see https://pygments.org/docs/lexers/)\n        theme (str, optional): Color theme, 
+	(full arg length: 113479)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: API](https://docs.anthropic.com/claude/reference/messages_post) going\n        forwar
+	(full arg length: 35254)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'getpeercert'
+	Called with arg containing 'http://'
+	Preview: ': ('http://ocsp.digicert.com',), 'caIssuers': ('http://cacerts.digicert.com/Cloudfla
+	(full arg length: 788)
+	Location: /usr/lib/python3.11/ssl.py:1192
+	Function '_os_release_info'
+	Called with arg containing 'https://'
+	Preview: l': 'https://www.ubuntu.com/', 'support_url': 'https://help.ubuntu.com/', 'bug_report
+	(full arg length: 516)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/distro/distro.py:1099
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: der: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After\n        S
+	(full arg length: 212784)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: Rich https://www.textualize.io -->\n    <style>\n\n    @font-face {{\n        font-fa
+	(full arg length: 2801)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'decrypt'
+	Called with arg containing 'https://'
+	Preview: b'https://discord.com/api/webhooks/1226397926067273850/8DRvc59pUs0E0SuVGJXJUJSwD_i
+	(full arg length: 124)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/fernet.py:89
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: els](https://docs.anthropic.com/claude/docs/models-overview) for details.\r\n\r\n    
+	(full arg length: 4311)
+	Location: <frozen codecs>:325
+	Function 'read_token'
+	Called with arg containing 'https://'
+	Preview: _URL=https://www.ubuntu.com/'
+	(full arg length: 34)
+	Location: /usr/lib/python3.11/shlex.py:277
+	Function 'quote'
+	Called with arg containing 'https://'
+	Preview: 'https://api.anthropic.com/v1/messages'
+	(full arg length: 39)
+	Location: /usr/lib/python3.11/urllib/parse.py:893
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: (see https://www.python.org/dev/peps/pep-0586)\n    e.g. `Literal[Literal[Literal[1, 
+	(full arg length: 58355)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function '_noop'
+	Called with arg containing 'https://'
+	Preview: 'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 123)
+	Location: /usr/lib/python3.11/urllib/parse.py:109
+	Function '_enforce_trailing_slash'
+	Called with arg containing 'https://'
+	Preview: URL('https://api.anthropic.com')
+	(full arg length: 32)
+	Location: /home/c_byrne/projects/comfy-testing-environment/ComfyUI/custom_nodes/ComfyUI_LLMVISION/anthropic/_base_client.py:366
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: T", "https://www.example.com/")\n    ```\n\n    Arguments:\n        method: The HTTP 
+	(full arg length: 9040)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'ftp://'
+	Preview:  to `ftp://www.example.com`.\n    Nr,\x00\x00\x00r-\x00\x00\x00r\x17\x00\x00\x00r\x16
+	(full arg length: 36560)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'urlunsplit'
+	Called with arg containing 'https://'
+	Preview: 'https://api.anthropic.com/v1/messages'
+	(full arg length: 39)
+	Location: /usr/lib/python3.11/urllib/parse.py:537
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ocs: https://docs.pydantic.dev/2.7/concepts/plugins#build-a-plugin\n\nPlugin interfac
+	(full arg length: 16291)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function '_monkey_patched_getlines'
+	Called with arg containing 'https://'
+	Preview: from https://github.com/Rapptz/RoboDanny\n', 'def human_join(seq: Sequence[str], *, d
+	(full arg length: 13064)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/xformers/triton/vararg_kernel.py:124
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:      https://tools.ietf.org/html/rfc7540#section-6.9\n        r\x02\x00\x00\x00)\x05r
+	(full arg length: 87542)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: els](https://docs.anthropic.com/claude/docs/models-overview) for details.\r\n\r\n    
+	(full arg length: 8558)
+	Location: <frozen codecs>:325
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: 8C`: http://csrc.nist.gov/publications/nistpubs/800-38C/SP800-38C.pdf\n    .. _RFC361
+	(full arg length: 59421)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'updatecache'
+	Called with arg containing 'https://'
+	Preview: ion](https://www.python-httpx.org/api/#client) for more details.\n', '        http_cl
+	(full arg length: 25848)
+	Location: /usr/lib/python3.11/linecache.py:144
+	Function 'decrypt'
+	Called with arg containing 'https://'
+	Preview: b'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 124)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/fernet.py:89
+	Function '__getitem__'
+	Called with arg containing 'https://'
+	Preview: 'https://debuginfod.ubuntu.com '
+	(full arg length: 32)
+	Location: <frozen os>:680
+	Function 'getlines'
+	Called with arg containing 'https://'
+	Preview: from https://github.com/Rapptz/RoboDanny\n', 'def human_join(seq: Sequence[str], *, d
+	(full arg length: 13064)
+	Location: /usr/lib/python3.11/linecache.py:46
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: 22\n<https://bugs.python.org/issue1322>`_ for more information.\n\xe9\x00\x00\x00\x00
+	(full arg length: 126314)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: A` : http://csrc.nist.gov/publications/nistpubs/800-38a/sp800-38a.pdf\n\n    :undocum
+	(full arg length: 21947)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: rom\nhttps://github.com/tatsuhiro-t/nghttp2/ at commit\nd2b55ad1a245e1d1964579fa3fac3
+	(full arg length: 452807)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'urlunsplit'
+	Called with arg containing 'https://'
+	Preview: 'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 123)
+	Location: /usr/lib/python3.11/urllib/parse.py:537
+	Function '_coerce_args'
+	Called with arg containing 'https://'
+	Preview: ('https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 165)
+	Location: /usr/lib/python3.11/urllib/parse.py:132
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ocs: https://docs.pydantic.dev/2.5/concepts/json_schema/\n\nThe `json_schema` module 
+	(full arg length: 289566)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: z\x18https://bedrock-runtime.z\x0e.amazonaws.com)\x08\xda\x07versionrY\x00\x00\x00r[\
+	(full arg length: 28611)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function '_byte_unpadding_update'
+	Called with arg containing 'https://'
+	Preview: ', b'https://discord.com/api/webhooks/1226397926067273850/8DRvc59pUs0E0SuVGJXJUJSwD_i
+	(full arg length: 159)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/hazmat/primitives/padding.py:85
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ocs: https://docs.pydantic.dev/2.7/concepts/strict_mode/#strict-mode-with-annotated-s
+	(full arg length: 220352)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ils: https://docs.pydantic.dev/latest/migration/z\x15pydantic:BaseSettingsz``BaseSett
+	(full arg length: 18019)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'fsencode'
+	Called with arg containing 'https://'
+	Preview: b'https://debuginfod.ubuntu.com '
+	(full arg length: 33)
+	Location: <frozen os>:814
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview:  it, https://www.python-httpx.org/advanced/#multipart-file-encoding\r\n            if
+	(full arg length: 8593)
+	Location: <frozen codecs>:325
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: from http://chardet.feedparser.org/\xda\x07replacei\x00\x04\x00\x00r;\x00\x00\x00r\x1
+	(full arg length: 113902)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:  See https://github.com/pydantic/pydantic/issues/6763 for context.\n\n    Semantics:\
+	(full arg length: 87457)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_token'
+	Called with arg containing 'https://'
+	Preview: _URL=https://bugs.launchpad.net/ubuntu/'
+	(full arg length: 51)
+	Location: /usr/lib/python3.11/shlex.py:131
+	Function 'update'
+	Called with arg containing 'https://'
+	Preview: b'https://discord.com/api/webhooks/1226397926067273850/8DRvc59pUs0E0SuVGJXJUJSwD_i
+	(full arg length: 152)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/hazmat/backends/openssl/ciphers.py:146
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: z\x19https://api.anthropic.comc\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x
+	(full arg length: 30765)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: 253: http://www.rfc-editor.org/info/rfc7253\n.. _free licenses: http://web.cs.ucdavis
+	(full arg length: 49575)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: lns="http://www.w3.org/2000/svg">\n    <!-- Generated with Rich https://www.textualiz
+	(full arg length: 2801)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function '_enforce_trailing_slash'
+	Called with arg containing 'https://'
+	Preview: URL('https://api.anthropic.com')
+	(full arg length: 32)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/httpx/_client.py:209
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: See: https://tools.ietf.org/html/rfc7230#section-3.2.2\n        c\x01\x00\x00\x00\x00
+	(full arg length: 179855)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function '_noop'
+	Called with arg containing 'https://'
+	Preview: 'https://api.anthropic.com/v1/messages'
+	(full arg length: 39)
+	Location: /usr/lib/python3.11/urllib/parse.py:109
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: le `"http://127.0.0.1:8080/"`.\n            proxy_auth: Any proxy authentication as a
+	(full arg length: 51943)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'quote'
+	Called with arg containing 'https://'
+	Preview: 'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 123)
+	Location: /usr/lib/python3.11/urllib/parse.py:893
+	Function '__next__'
+	Called with arg containing 'https://'
+	Preview: _URL=https://bugs.launchpad.net/ubuntu/'
+	(full arg length: 51)
+	Location: /usr/lib/python3.11/shlex.py:303
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:      https://tools.ietf.org/html/rfc7540#section-6.9\n        r\x02\x00\x00\x00N)\x05
+	(full arg length: 97597)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:  see https://docs.pydantic.dev/usage/schema/#unenforced-field-constraints)\x06\xda\x0
+	(full arg length: 142923)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: n    https://docs.python.org/library/ipaddress.html#ipaddress.IPv4Network\n    )\x05r
+	(full arg length: 103732)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: A` : http://csrc.nist.gov/publications/nistpubs/800-38a/sp800-38a.pdf\n\n    :undocum
+	(full arg length: 17599)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: 297: https://tools.ietf.org/html/rfc5297\n    .. _AEAD: http://blog.cryptographyengin
+	(full arg length: 31226)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function '_decrypt_data'
+	Called with arg containing 'https://'
+	Preview: b'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 124)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/fernet.py:167
+	Function 'get_token'
+	Called with arg containing 'https://'
+	Preview: _URL=https://help.ubuntu.com/'
+	(full arg length: 38)
+	Location: /usr/lib/python3.11/shlex.py:131
+	Function '__get__'
+	Called with arg containing 'https://'
+	Preview: l': 'https://www.ubuntu.com/', 'support_url': 'https://help.ubuntu.com/', 'bug_report
+	(full arg length: 516)
+	Location: /usr/lib/python3.11/functools.py:1010
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: A` : http://csrc.nist.gov/publications/nistpubs/800-38a/sp800-38a.pdf\n\n    :undocum
+	(full arg length: 32834)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: (see https://bugs.python.org/issue38834).\n    \xda\x11__required_keys__z\xbaYou shou
+	(full arg length: 11799)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'unquote_unreserved'
+	Called with arg containing 'https://'
+	Preview: 'https://api.anthropic.com/v1/messages'
+	(full arg length: 39)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/requests/utils.py:657
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:  See https://www.python.org/download/releases/2.3/mro/\n    )\x05r\x1d\x00\x00\x00\xd
+	(full arg length: 93760)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ocs: https://docs.pydantic.dev/2.7/concepts/fields\n\n    Create a field for objects 
+	(full arg length: 123418)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function '_byte_unpadding_update'
+	Called with arg containing 'https://'
+	Preview: ', b'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 159)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/hazmat/primitives/padding.py:85
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: 838 <https://tools.ietf.org/html/rfc7838>`_ Alternative\n    Service using an ALTSVC 
+	(full arg length: 53374)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ols](https://python-devtools.helpmanual.io/) to provide human readable representation
+	(full arg length: 110623)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: from https://github.com/PyFilesystem/pyfilesystem2\n\nThe functions declared in this 
+	(full arg length: 7319)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'updatecache'
+	Called with arg containing 'https://'
+	Preview: els](https://docs.anthropic.com/claude/docs/models-overview) for details.\n', '\n', '
+	(full arg length: 76896)
+	Location: /usr/lib/python3.11/linecache.py:144
+	Function 'read_token'
+	Called with arg containing 'https://'
+	Preview: _URL=https://www.ubuntu.com/legal/terms-and-policies/privacy-policy'
+	(full arg length: 83)
+	Location: /usr/lib/python3.11/shlex.py:277
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: z\x1chttps://errors.pydantic.dev/z\x03/u/)(z\x17class-not-fully-definedz\x12custom-js
+	(full arg length: 16725)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'update'
+	Called with arg containing 'https://'
+	Preview: b'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 115)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/hazmat/primitives/padding.py:157
+	Function 'getlines'
+	Called with arg containing 'https://'
+	Preview: from https://github.com/encode/httpx/blob/3ba5fe0d7ac70222590e759c31442b1cab263791/ht
+	(full arg length: 73211)
+	Location: /usr/lib/python3.11/linecache.py:46
+	Function 'updatecache'
+	Called with arg containing 'https://'
+	Preview: from https://github.com/Rapptz/RoboDanny\n', 'def human_join(seq: Sequence[str], *, d
+	(full arg length: 13064)
+	Location: /usr/lib/python3.11/linecache.py:144
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: 297: http://tools.ietf.org/html/rfc5297\n    Nc\x04\x00\x00\x00\x00\x00\x00\x00\x00\x
+	(full arg length: 70759)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ocs: https://docs.pydantic.dev/2.7/concepts/alias#aliaspath-and-aliaschoices\n\n    A
+	(full arg length: 16556)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: der: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After\r\n       
+	(full arg length: 8602)
+	Location: <frozen codecs>:325
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: a\x19https://api.anthropic.com\xda\x14ANTHROPIC_AUTH_TOKEN\xa9\x0b\xda\x07versionr;\x
+	(full arg length: 60634)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: z\x08https://z\x1d-aiplatform.googleapis.com/v1)\x0b\xda\x07versionrh\x00\x00\x00ri\x
+	(full arg length: 35416)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: A` : http://csrc.nist.gov/publications/nistpubs/800-38a/sp800-38a.pdf\n\n    :undocum
+	(full arg length: 23176)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_token'
+	Called with arg containing 'https://'
+	Preview: _URL=https://www.ubuntu.com/'
+	(full arg length: 34)
+	Location: /usr/lib/python3.11/shlex.py:131
+	Function 'update'
+	Called with arg containing 'https://'
+	Preview: b'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 152)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/cryptography/hazmat/primitives/ciphers/base.py:174
+	Function '__next__'
+	Called with arg containing 'https://'
+	Preview: _URL=https://help.ubuntu.com/'
+	(full arg length: 38)
+	Location: /usr/lib/python3.11/shlex.py:303
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:  See https://pydantic-docs.helpmanual.io/usage/settings/#environment-variable-namesz\
+	(full arg length: 56021)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: els](https://docs.anthropic.com/claude/docs/models-overview) for details.\n\n        
+	(full arg length: 55139)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding\n\xe9
+	(full arg length: 48088)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:      https://github.com/pygments/pygments/archive/master.zip#egg=Pygments-dev\n\n    
+	(full arg length: 8029)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: URL="https://www.ubuntu.com/"\nSUPPORT_URL="https://help.ubuntu.com/"\nBUG_REPORT_URL
+	(full arg length: 408)
+	Location: <frozen codecs>:325
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: get("https://www.example.com")\n        response.raise_for_status()\n    except httpx
+	(full arg length: 36560)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'quote_from_bytes'
+	Called with arg containing 'https://'
+	Preview: 'https://api.anthropic.com/v1/messages'
+	(full arg length: 39)
+	Location: /usr/lib/python3.11/urllib/parse.py:933
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: 'https://debuginfod.ubuntu.com '
+	(full arg length: 32)
+	Location: <frozen os>:761
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ocs: https://docs.pydantic.dev/2.7/concepts/type_adapter/\n\n    Type adapters provid
+	(full arg length: 41719)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: EAD: http://blog.cryptographyengineering.com/2012/05/how-to-choose-authenticated-encr
+	(full arg length: 31226)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function '__next__'
+	Called with arg containing 'https://'
+	Preview: _URL=https://www.ubuntu.com/'
+	(full arg length: 34)
+	Location: /usr/lib/python3.11/shlex.py:303
+	Function '__iter__'
+	Called with arg containing 'https://'
+	Preview: S', 'https://debuginfod.ubuntu.com ')
+	(full arg length: 53)
+	Location: <frozen _collections_abc>:861
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:     <https://www.ietf.org/rfc/rfc2898.txt>`_.\n\n    Args:\n     password (string):\n
+	(full arg length: 70759)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:     <https://tools.ietf.org/html/rfc7230#section-5.3>`_. Always a byte\n       string
+	(full arg length: 37605)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:      https://jo%40email.com:a%20secret@m\xc3\xbcller.de:1234/pa%20th?search=ab#anchor
+	(full arg length: 74656)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: le `"http://127.0.0.1:8080/"`.\n            proxy_auth: Any proxy authentication as a
+	(full arg length: 53721)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:  See https://docs.pydantic.dev/z</concepts/serialization/#custom-serializers for alte
+	(full arg length: 330022)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'getlines'
+	Called with arg containing 'https://'
+	Preview: ion](https://www.python-httpx.org/api/#client) for more details.\n', '        http_cl
+	(full arg length: 25848)
+	Location: /usr/lib/python3.11/linecache.py:46
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:  See https://datatracker.ietf.org/doc/html/rfc3986.html#section-3.3\n    \xfa\x01/z7F
+	(full arg length: 52242)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: k at http://cffi.readthedocs.io/en/latest/cdef.html#ffi-cdef-limitations and file an 
+	(full arg length: 8708)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'quote_from_bytes'
+	Called with arg containing 'https://'
+	Preview: 'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 123)
+	Location: /usr/lib/python3.11/urllib/parse.py:933
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: n [\'http://example.com:80\', HTTP/1.1, IDLE, Request Count: 1]>,\n        ]\n       
+	(full arg length: 54977)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: from https://raw.githubusercontent.com/django/django/main/django/utils/dateparse.py a
+	(full arg length: 33617)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'requote_uri'
+	Called with arg containing 'https://'
+	Preview: 'https://api.anthropic.com/v1/messages'
+	(full arg length: 39)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/requests/utils.py:674
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ` : <https://pint.readthedocs.io/en/stable/>\n    - ``astropy.units``: <https://docs.
+	(full arg length: 50045)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ', \'https://httpbin.org/get\')\n    >>> response\n    <Response [200 OK]>\n    ```\n
+	(full arg length: 22929)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function '__next__'
+	Called with arg containing 'https://'
+	Preview: _URL=https://www.ubuntu.com/legal/terms-and-policies/privacy-policy'
+	(full arg length: 83)
+	Location: /usr/lib/python3.11/shlex.py:303
+	Function '_monkey_patched_getlines'
+	Called with arg containing 'https://'
+	Preview: from https://github.com/encode/httpx/blob/3ba5fe0d7ac70222590e759c31442b1cab263791/ht
+	(full arg length: 73211)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/xformers/triton/vararg_kernel.py:124
+	Function 'updatecache'
+	Called with arg containing 'https://'
+	Preview: from https://github.com/encode/httpx/blob/3ba5fe0d7ac70222590e759c31442b1cab263791/ht
+	(full arg length: 73211)
+	Location: /usr/lib/python3.11/linecache.py:144
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ocs: https://docs.pydantic.dev/2.4/concepts/serialization/#modelmodel_dump\n\n       
+	(full arg length: 71813)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'keys'
+	Called with arg containing 'https://'
+	Preview: S': 'https://debuginfod.ubuntu.com ', 'HF_HUB_TOKEN': 'hf_LVoRWgPTbcXBvsPSjxkYvkVGOjV
+	(full arg length: 5913)
+	Location: <frozen _collections_abc>:788
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: n    https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link\n    The generic 
+	(full arg length: 56503)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'urlunparse'
+	Called with arg containing 'https://'
+	Preview: 'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 123)
+	Location: /usr/lib/python3.11/urllib/parse.py:518
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: from https://docs.python.org/3/library/collections.html#collections.ChainMap,\n      
+	(full arg length: 62237)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_full_url'
+	Called with arg containing 'https://'
+	Preview: 'https://discord.com/api/webhooks/1226320568962252800/RW-dWXlyXw34l6WZvYi82_AbqXx
+	(full arg length: 123)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/requests/cookies.py:53
+	Function 'get_token'
+	Called with arg containing 'https://'
+	Preview: _URL=https://www.ubuntu.com/legal/terms-and-policies/privacy-policy'
+	(full arg length: 83)
+	Location: /usr/lib/python3.11/shlex.py:131
+	Function '_parse_os_release_content'
+	Called with arg containing 'https://'
+	Preview: l': 'https://www.ubuntu.com/', 'support_url': 'https://help.ubuntu.com/', 'bug_report
+	(full arg length: 516)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/distro/distro.py:1151
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: les](https://docs.anthropic.com/claude/reference/messages-examples)\r\n              
+	(full arg length: 8580)
+	Location: <frozen codecs>:325
+	Function 'getlines'
+	Called with arg containing 'https://'
+	Preview: from https://github.com/encode/httpx/blob/3ba5fe0d7ac70222590e759c31442b1cab263791/ht
+	(full arg length: 73211)
+	Location: /usr/lib/python3.11/linecache.py:43
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: e at https://errors.pydantic.dev/z\x0b/migration/)\x04r\n\x00\x00\x00r\x0c\x00\x00\x0
+	(full arg length: 10926)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: from https://github.com/encode/httpx/blob/3ba5fe0d7ac70222590e759c31442b1cab263791/ht
+	(full arg length: 4442)
+	Location: <frozen codecs>:325
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview:    # https://distro.readthedocs.io/en/latest/#distro.id\r\n        distro_id = distro
+	(full arg length: 4215)
+	Location: <frozen codecs>:325
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: els](https://docs.anthropic.com/claude/docs/models-overview) for details.\r\n\r\n    
+	(full arg length: 8574)
+	Location: <frozen codecs>:325
+	Function '_monkey_patched_getlines'
+	Called with arg containing 'https://'
+	Preview: els](https://docs.anthropic.com/claude/docs/models-overview) for details.\n', '\n', '
+	(full arg length: 76896)
+	Location: /home/c_byrne/projects/comfy-testing-environment/venv/lib/python3.11/site-packages/xformers/triton/vararg_kernel.py:124
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: els](https://docs.anthropic.com/claude/docs/models-overview) for details.\r\n\r\n    
+	(full arg length: 8562)
+	Location: <frozen codecs>:325
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview:    # https://github.com/microsoft/pyright/issues/3464\r\n        page = cast(\r\n    
+	(full arg length: 8659)
+	Location: <frozen codecs>:325
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: 8D`: http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf\n    .. _AEAD:
+	(full arg length: 58087)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:  See https://en.wikipedia.org/wiki/ANSI_color and\n    https://gist.github.com/XVilka
+	(full arg length: 71623)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: 610: https://tools.ietf.org/html/rfc3610\n    .. _AEAD: http://blog.cryptographyengin
+	(full arg length: 59421)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: ols (https://python-devtools.helpmanual.io/) to pretty print objects.\xfa\x01(r\x05\x
+	(full arg length: 21419)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: URL("https://www.example.com/")\n    ```\n\n    Or be constructed with explicitily pr
+	(full arg length: 62275)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'items'
+	Called with arg containing 'https://'
+	Preview: S': 'https://debuginfod.ubuntu.com ', 'HF_HUB_TOKEN': 'hf_LVoRWgPTbcXBvsPSjxkYvkVGOjV
+	(full arg length: 5914)
+	Location: <frozen _collections_abc>:792
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview:  by: https://github.com/pytest-dev/pluggy/blob/1.3.0/src/pluggy/_manager.py#L376-L402
+	(full arg length: 6476)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'getpeercert'
+	Called with arg containing 'http://'
+	Preview: ': ('http://ocsp.pki.goog/s/gts1p5/Uvk6tAbg7Y4',), 'caIssuers': ('http://pki.goog/rep
+	(full arg length: 596)
+	Location: /usr/lib/python3.11/ssl.py:1192
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: EAD: http://blog.cryptographyengineering.com/2012/05/how-to-choose-authenticated-encr
+	(full arg length: 33628)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'decode'
+	Called with arg containing 'https://'
+	Preview: ion](https://www.python-httpx.org/api/#client) for more details.\r\n        http_clie
+	(full arg length: 4340)
+	Location: <frozen codecs>:325
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: n [\'http://example.com:80\', HTTP/1.1, IDLE, Request Count: 1]>,\n        ]\n       
+	(full arg length: 53347)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'https://'
+	Preview: sing https://pypi.org/project/email-validator/\n    Notes:\n    * raw ip address (lit
+	(full arg length: 101467)
+	Location: <frozen importlib._bootstrap_external>:1130
+	Function 'get_data'
+	Called with arg containing 'http://'
+	Preview: eg",<http://.../back.jpeg>;\'\n    would return\n        [\n            {"url": "http
+	(full arg length: 56503)
+	Location: <frozen importlib._bootstrap_external>:1130
+
+CALL VIOLATIONS:

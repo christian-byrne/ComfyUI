@@ -36,6 +36,8 @@ import folder_paths
 import latent_preview
 import node_helpers
 
+from node_scanner import NodeScanner
+
 def before_node_execution():
     comfy.model_management.throw_exception_if_processing_interrupted()
 
@@ -1912,7 +1914,7 @@ def get_module_name(module_path: str) -> str:
     return base_path
 
 
-def load_custom_node(module_path: str, ignore=set(), module_parent="custom_nodes") -> bool:
+def load_custom_node(module_path: str, ignore=set(), module_parent="custom_nodes", scan=False) -> bool:
     module_name = os.path.basename(module_path)
     if os.path.isfile(module_path):
         sp = os.path.splitext(module_path)
@@ -1940,6 +1942,33 @@ def load_custom_node(module_path: str, ignore=set(), module_parent="custom_nodes
                 if name not in ignore:
                     NODE_CLASS_MAPPINGS[name] = node_cls
                     node_cls.RELATIVE_PYTHON_MODULE = "{}.{}".format(module_parent, get_module_name(module_path))
+
+                    if scan:
+                        node_inputs = node_cls.INPUT_TYPES()
+                        node_main_fn_name = getattr(node_cls, "FUNCTION", None)
+                        example_inputs = {
+                            "IMAGE" : torch.rand(1, 3, 64, 64),
+                            "LATENT" : torch.rand(1, 512),
+                            "CONDITIONING" : torch.rand(1, 512),
+                            # "MODEL" : ____.get_default_model(),
+                            "MASK" : torch.rand(1, 64, 64),
+                            "INT" : 1,
+                            "FLOAT" : 1.0,
+                            "STRING" : "string",
+                            "PROMPT" : "prompt",
+                            "EXTRA_PNGINFO" : {"key": "value"},
+                        }
+
+                        kwargs_ = {}
+                        for arg_name, arg_type in node_inputs["required"].items():
+                            arg_ = example_inputs[arg_type[0]]
+                            kwargs_[arg_name] = arg_
+                        try:
+                            node_main_fn = getattr(node_cls, node_main_fn_name)
+                            node_main_fn(node_cls, **kwargs_)
+                        except:
+                            pass
+
             if hasattr(module, "NODE_DISPLAY_NAME_MAPPINGS") and getattr(module, "NODE_DISPLAY_NAME_MAPPINGS") is not None:
                 NODE_DISPLAY_NAME_MAPPINGS.update(module.NODE_DISPLAY_NAME_MAPPINGS)
             return True
@@ -1974,7 +2003,13 @@ def init_external_custom_nodes():
             if os.path.isfile(module_path) and os.path.splitext(module_path)[1] != ".py": continue
             if module_path.endswith(".disabled"): continue
             time_before = time.perf_counter()
-            success = load_custom_node(module_path, base_node_names, module_parent="custom_nodes")
+            
+            scanner = NodeScanner()
+            sys.settrace(scanner.trace_calls)
+            success = load_custom_node(module_path, base_node_names, module_parent="custom_nodes", scan=True)
+            sys.settrace(None)
+            scanner.log_results()
+
             node_import_times.append((time.perf_counter() - time_before, module_path, success))
 
     if len(node_import_times) > 0:
