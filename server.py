@@ -29,6 +29,20 @@ import node_helpers
 from app.frontend_management import FrontendManager
 from app.user_manager import UserManager
 
+from nodes import LazyNode
+import aiosqlite
+from database.types import DatabaseNodeAttributes
+from database.db_service import (
+    get_node_attributes_by_name,
+    get_node_location_by_name,
+    insert_node_locations,
+    insert_node_attributes,
+)
+import inspect
+
+from collections import deque
+from typing import List
+
 
 class BinaryEventTypes:
     PREVIEW_IMAGE = 1
@@ -97,6 +111,9 @@ class PromptServer():
         self.client_id = None
 
         self.on_prompt_handlers = []
+
+        self.node_attribute_inserts = deque()
+        self.node_location_inserts = deque()
 
         @routes.get('/ws')
         async def websocket_handler(request):
@@ -414,7 +431,41 @@ class PromptServer():
         async def get_prompt(request):
             return web.json_response(self.get_queue_info())
 
-        def node_info(node_class):
+        def node_info_from_db(node_class, node_location_record, node_attributes):
+            node_is_modified = node_location_record is None or not os.path.exists(node_location_record[1])
+
+            if node_is_modified:
+                node_class_obj = nodes.NODE_CLASS_MAPPINGS[node_class]
+
+                # Initialize the class if it's a LazyNode
+                if isinstance(node_class_obj, LazyNode):
+                    node_filepath = node_class_obj["filepath"]
+                else:
+                    node_filepath = inspect.getfile(node_class_obj)
+
+                mtime = os.path.getmtime(node_filepath)
+                node_location_record = (node_class, node_filepath, mtime)
+                self.node_location_inserts.append({
+                    "class_name" : node_class,
+                    "class_path" : node_filepath,
+                    "mtime" : mtime
+                })
+
+            cur_mtime = os.path.getmtime(node_location_record[1])
+            last_mtime = node_location_record[2]
+            node_file_modified = node_is_modified or not last_mtime or last_mtime < cur_mtime
+            info_in_db = node_attributes is not None
+            info_needs_update = not info_in_db or node_file_modified
+
+            if info_needs_update:
+                node_attributes = node_info_from_obj(node_class)
+                self.node_attribute_inserts.append(node_attributes)
+                return node_attributes
+
+            # Nothing has changed - Use the existing info from the database
+            return DatabaseNodeAttributes.from_tuple(node_attributes).model_dump()
+
+        def node_info_from_obj(node_class):
             obj_class = nodes.NODE_CLASS_MAPPINGS[node_class]
             info = {}
             info['input'] = obj_class.INPUT_TYPES()
@@ -435,24 +486,36 @@ class PromptServer():
                 info['category'] = obj_class.CATEGORY
             return info
 
+        async def node_info(node_class_names: List[str]):
+            out = {}
+            async with aiosqlite.connect("comfy.db") as conn:
+                for node_class in node_class_names:
+                    try:
+                        node_location_record = await get_node_location_by_name(conn, node_class)
+                        node_attributes = await get_node_attributes_by_name(conn, node_class)
+                        out[node_class] = node_info_from_db(node_class, node_location_record, node_attributes)
+                    except aiosqlite.Error as e:
+                        logging.error(f"Error while retrieving information for the '{node_class}' node from the database:\n{e}")
+                        out[node_class] = node_info_from_obj(node_class)
+                    except Exception as e:
+                        logging.error(f"[ERROR] An error occurred while retrieving information for the '{node_class}' node.")
+                        logging.error(traceback.format_exc())
+
+            asyncio.create_task(insert_node_locations(self.node_location_inserts))
+            asyncio.create_task(insert_node_attributes(self.node_attribute_inserts))
+
+            return web.json_response(out)
+        
         @routes.get("/object_info")
         async def get_object_info(request):
-            out = {}
-            for x in nodes.NODE_CLASS_MAPPINGS:
-                try:
-                    out[x] = node_info(x)
-                except Exception as e:
-                    logging.error(f"[ERROR] An error occurred while retrieving information for the '{x}' node.")
-                    logging.error(traceback.format_exc())
-            return web.json_response(out)
+            return await node_info(list(nodes.NODE_CLASS_MAPPINGS.keys()))
 
         @routes.get("/object_info/{node_class}")
         async def get_object_info_node(request):
             node_class = request.match_info.get("node_class", None)
-            out = {}
             if (node_class is not None) and (node_class in nodes.NODE_CLASS_MAPPINGS):
-                out[node_class] = node_info(node_class)
-            return web.json_response(out)
+                return await node_info([node_class])
+            return web.json_response({})
 
         @routes.get("/history")
         async def get_history(request):

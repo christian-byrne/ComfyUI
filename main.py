@@ -7,6 +7,9 @@ import folder_paths
 import time
 from comfy.cli_args import args
 
+import asyncio
+from database.db_service import delete_db, init_db
+
 
 def execute_prestartup_script():
     def execute_script(script_path):
@@ -204,6 +207,10 @@ if __name__ == "__main__":
             new_updater.update_windows_updater()
         except:
             pass
+    
+    if args.reset_database:
+        delete_db()
+    asyncio.run(init_db())
 
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
@@ -219,6 +226,7 @@ if __name__ == "__main__":
             load_extra_path_config(config_path)
 
     nodes.init_extra_nodes(init_custom_nodes=not args.disable_all_custom_nodes)
+    loop.run_until_complete(nodes.update_database())
 
     cuda_malloc_warning()
 

@@ -36,6 +36,13 @@ import folder_paths
 import latent_preview
 import node_helpers
 
+import aiosqlite
+import asyncio
+from database.db_service import get_module_by_path, insert_node_locations, insert_modules
+from collections import deque
+import inspect
+
+
 def before_node_execution():
     comfy.model_management.throw_exception_if_processing_interrupted()
 
@@ -1889,6 +1896,8 @@ NODE_DISPLAY_NAME_MAPPINGS = {
 
 EXTENSION_WEB_DIRS = {}
 
+NODE_LOCATION_INSERTS = deque()
+MODULE_INSERTS = deque()
 
 def get_module_name(module_path: str) -> str:
     """
@@ -1912,11 +1921,75 @@ def get_module_name(module_path: str) -> str:
     return base_path
 
 
+class LazyModule:
+    def __init__(self, module_path, module_spec, module_name):
+        self.module_path = module_path
+        self.module_name = module_name
+        self.module_spec = module_spec
+        self.module = None
+
+    def __getattr__(self, name):
+        if self.module is None:
+            self._load_module()
+
+        return getattr(self.module, name)
+    
+    def _load_module(self):
+        self.module = importlib.util.module_from_spec(self.module_spec)
+        sys.modules[self.module_name] = self.module
+        self.module_spec.loader.exec_module(self.module)
+
+class LazyNode:
+    def __init__(self, relative_python_module, class_name, source_filepath: str = None):
+        self.relative_python_module = relative_python_module
+        self.class_name = class_name
+        self._class = None
+        self.source_filepath = source_filepath
+
+    def __getitem__(self, key):
+        if key == "filepath":
+            if self.source_filepath is not None:
+                return self.source_filepath
+            else:
+                self._load_class()
+                return inspect.getfile(self._class)
+
+    def __call__(self, *args, **kwargs):
+        if self._class is None:
+            self._load_class()
+        return self._class(*args, **kwargs)
+
+    def _load_class(self):
+        module = importlib.import_module(self.relative_python_module)
+        self._class = getattr(module, "NODE_CLASS_MAPPINGS")[self.class_name]
+
+    def __hasattr__(self, name):
+        if self._class is None:
+            self._load_class()
+        return hasattr(self._class, name)
+
+    def __getattr__(self, name):
+        if self._class is None:
+            self._load_class()
+        return getattr(self._class, name)
+
+async def fetch_module_info(module_path):
+    async with aiosqlite.connect("comfy.db") as conn:
+        return await get_module_by_path(conn, module_path)
+
 def load_custom_node(module_path: str, ignore=set(), module_parent="custom_nodes") -> bool:
     module_name = os.path.basename(module_path)
     if os.path.isfile(module_path):
         sp = os.path.splitext(module_path)
         module_name = sp[0]
+    cur_mtime = os.path.getmtime(module_path)
+    loop = asyncio.get_event_loop()
+    try:
+        module_record = loop.run_until_complete(fetch_module_info(module_path))
+    except Exception as e:
+        logging.warning(f"Cannot get module info for {module_path}: {e}")
+        module_record = None
+
     try:
         logging.debug("Trying to load custom node {}".format(module_path))
         if os.path.isfile(module_path):
@@ -1926,26 +1999,72 @@ def load_custom_node(module_path: str, ignore=set(), module_parent="custom_nodes
             module_spec = importlib.util.spec_from_file_location(module_name, os.path.join(module_path, "__init__.py"))
             module_dir = module_path
 
-        module = importlib.util.module_from_spec(module_spec)
-        sys.modules[module_name] = module
-        module_spec.loader.exec_module(module)
+        if module_spec is None:
+            raise ImportError("Cannot import module from {}".format(module_path))
+        
+        lazy_module = LazyModule(module_path, module_spec, module_name)
+        module_is_modified = module_record is None or cur_mtime > module_record[1]
 
-        if hasattr(module, "WEB_DIRECTORY") and getattr(module, "WEB_DIRECTORY") is not None:
-            web_dir = os.path.abspath(os.path.join(module_dir, getattr(module, "WEB_DIRECTORY")))
-            if os.path.isdir(web_dir):
-                EXTENSION_WEB_DIRS[module_name] = web_dir
+        if module_is_modified:
+            new_module_record = {
+                "module_path": module_path,
+                "mtime": cur_mtime,
+                "web_directory": None,
+                "class_mappings": {},
+                "display_name_mappings": {},
+            }
+            if hasattr(lazy_module, "WEB_DIRECTORY") and getattr(lazy_module, "WEB_DIRECTORY") is not None:
+                web_dir = os.path.abspath(os.path.join(module_dir, getattr(lazy_module, "WEB_DIRECTORY")))
+                if os.path.isdir(web_dir):
+                    EXTENSION_WEB_DIRS[module_name] = web_dir
+                    new_module_record["web_directory"] = web_dir
 
-        if hasattr(module, "NODE_CLASS_MAPPINGS") and getattr(module, "NODE_CLASS_MAPPINGS") is not None:
-            for name, node_cls in module.NODE_CLASS_MAPPINGS.items():
-                if name not in ignore:
-                    NODE_CLASS_MAPPINGS[name] = node_cls
-                    node_cls.RELATIVE_PYTHON_MODULE = "{}.{}".format(module_parent, get_module_name(module_path))
-            if hasattr(module, "NODE_DISPLAY_NAME_MAPPINGS") and getattr(module, "NODE_DISPLAY_NAME_MAPPINGS") is not None:
-                NODE_DISPLAY_NAME_MAPPINGS.update(module.NODE_DISPLAY_NAME_MAPPINGS)
-            return True
+            if hasattr(lazy_module, "NODE_CLASS_MAPPINGS") and getattr(lazy_module, "NODE_CLASS_MAPPINGS") is not None:
+                record_class_mappings = {}
+                for name, node_cls in lazy_module.NODE_CLASS_MAPPINGS.items():
+                    if name not in ignore:
+                        node_cls.RELATIVE_PYTHON_MODULE = "{}.{}".format(module_parent, get_module_name(module_path))
+
+                        class_path = inspect.getfile(node_cls)
+                        NODE_CLASS_MAPPINGS[name] = LazyNode(node_cls.RELATIVE_PYTHON_MODULE, name, class_path)
+
+                        record_class_mappings[name] = node_cls.RELATIVE_PYTHON_MODULE
+                        NODE_LOCATION_INSERTS.append({
+                            "class_name": node_cls.__name__,
+                            "class_path": class_path, 
+                            "mtime" : os.path.getmtime(class_path)
+                        })
+                        
+                new_module_record["class_mappings"] = record_class_mappings
+                if hasattr(lazy_module, "NODE_DISPLAY_NAME_MAPPINGS") and getattr(lazy_module, "NODE_DISPLAY_NAME_MAPPINGS") is not None:
+                    NODE_DISPLAY_NAME_MAPPINGS.update(lazy_module.NODE_DISPLAY_NAME_MAPPINGS)
+                    new_module_record["display_name_mappings"] = lazy_module.NODE_DISPLAY_NAME_MAPPINGS
+            else:
+                logging.warning(f"Skip {module_path} module for custom nodes due to the lack of NODE_CLASS_MAPPINGS.")
+                return False
+            
+            MODULE_INSERTS.append(new_module_record)
+        
         else:
-            logging.warning(f"Skip {module_path} module for custom nodes due to the lack of NODE_CLASS_MAPPINGS.")
-            return False
+            web_directory = module_record[2]
+            if web_directory is not None:
+                EXTENSION_WEB_DIRS[module_name] = web_directory
+
+            node_class_mappings_ = module_record[3]
+            if node_class_mappings_ is not None:
+                for name, node_cls in json.loads(node_class_mappings_).items():
+                    if name not in ignore:
+                        NODE_CLASS_MAPPINGS[name] = LazyNode(
+                            "{}.{}".format(module_parent, get_module_name(module_path)),
+                            name,
+                        )
+
+                node_dislay_name_mappings_ = module_record[4]
+                if node_dislay_name_mappings_ is not None:
+                    NODE_DISPLAY_NAME_MAPPINGS.update(
+                        json.loads(node_dislay_name_mappings_)
+                    )
+        return True
     except Exception as e:
         logging.warning(traceback.format_exc())
         logging.warning(f"Cannot import {module_path} module for custom nodes: {e}")
@@ -2045,6 +2164,10 @@ def init_builtin_extra_nodes():
             import_failed.append(node_file)
 
     return import_failed
+
+async def update_database():
+    asyncio.create_task(insert_node_locations(NODE_LOCATION_INSERTS))
+    asyncio.create_task(insert_modules(MODULE_INSERTS))
 
 
 def init_extra_nodes(init_custom_nodes=True):
