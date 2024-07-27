@@ -498,7 +498,7 @@ class PromptServer():
                         logging.error(f"Error while retrieving information for the '{node_class}' node from the database:\n{e}")
                         out[node_class] = node_info_from_obj(node_class)
                     except Exception as e:
-                        logging.error(f"[ERROR] An error occurred while retrieving information for the '{node_class}' node.")
+                        logging.error(f"[ERROR] An error occurred while retrieving information for the '{node_class}' node.\nNode Attributes Record: {node_attributes}.\nNode Location Record: {node_location_record}")
                         logging.error(traceback.format_exc())
 
             asyncio.create_task(insert_node_locations(self.node_location_inserts))
