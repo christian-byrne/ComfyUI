@@ -1978,6 +1978,18 @@ async def fetch_module_info(module_path):
         return await get_module_by_path(conn, module_path)
 
 def load_custom_node(module_path: str, ignore=set(), module_parent="custom_nodes") -> bool:
+    ALWAYS_INITIALIZE = [
+        "rgthree-comfy",
+        "cg-use-everywhere",
+        "comfy_mtb",
+        "ComfyUI-Manager",
+        "cg-image-picker",
+        # "ComfyUI-Inspire-Pack",
+        # "ComfyUI-Impact-Pack",
+        # "bilbox-comfyui",
+        "comfyui-mixlab-nodes",
+        # "AIGODLIKE-ComfyUI-Translation",
+    ]
     module_name = os.path.basename(module_path)
     if os.path.isfile(module_path):
         sp = os.path.splitext(module_path)
@@ -2003,6 +2015,10 @@ def load_custom_node(module_path: str, ignore=set(), module_parent="custom_nodes
             raise ImportError("Cannot import module from {}".format(module_path))
         
         lazy_module = LazyModule(module_path, module_spec, module_name)
+
+        if module_name in ALWAYS_INITIALIZE:
+            lazy_module._load_module()
+        
         module_is_modified = module_record is None or cur_mtime > module_record[1]
 
         if module_is_modified:

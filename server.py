@@ -508,14 +508,21 @@ class PromptServer():
         
         @routes.get("/object_info")
         async def get_object_info(request):
-            return await node_info(list(nodes.NODE_CLASS_MAPPINGS.keys()))
-
+            request.app.router._frozen = False
+            res = await node_info(list(nodes.NODE_CLASS_MAPPINGS.keys()))
+            request.app.router._frozen = True
+            return res
+        
         @routes.get("/object_info/{node_class}")
         async def get_object_info_node(request):
             node_class = request.match_info.get("node_class", None)
             if (node_class is not None) and (node_class in nodes.NODE_CLASS_MAPPINGS):
-                return await node_info([node_class])
-            return web.json_response({})
+                request.app.router._frozen = False
+                res = await node_info([node_class])
+                request.app.router._frozen = True
+                return res
+            else:
+                return web.json_response({})
 
         @routes.get("/history")
         async def get_history(request):

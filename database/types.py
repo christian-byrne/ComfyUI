@@ -1,7 +1,4 @@
-"""Database Types
-
-Sometimes nodes fail type validation because the node author accidentally defined a tuple like `'output': ('image')` instead of `'output': ('image',)`
-"""
+"""Database Types"""
 
 from typing import Any, Dict, List, Tuple, Union, Optional, Literal
 from pydantic import BaseModel, Field, model_validator
@@ -13,12 +10,10 @@ InputData = Dict[
     Dict[
         str,
         Union[
-            Tuple[str],
-            Tuple[str, Dict[str, Any]],
-            Tuple[List[str]],
-            Tuple[List[str], Dict[str, Any]],
+            Tuple[str, Optional[Dict[str, Any]]],
+            Tuple[List[str], Optional[Dict[str, Any]]],
             List[Any],  # Hard to validate. E.g., see VHS VideoCombine input types
-            Literal["*"],
+            Literal["*", "any", "ANY"],
         ],
     ],
 ]
