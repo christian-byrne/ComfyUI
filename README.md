@@ -1,49 +1,8 @@
-> [!TIP]
->
-> Use with new frontend for type validation: `--front-end-version Comfy-Org/ComfyUI_frontend@latest`
-> 
 
-# Errors
 
-> `RuntimeError: Cannot register a resource into a frozen router`
- 
-<details>
-<summary>Details</summary>
+# Validation Errors
 
-From [aio-libs/aiohttp#1540](https://github.com/aio-libs/aiohttp/issues/1540):
-
-- `aiohttp` server instance won't allow adding routes after the server has started receiving requests.
-- You can add  logic somewhere to unfreeze the router for initailization of specific nodes, or just always unfreeze when initializing. For example:
-    ```python
-    @routes.get("/object_info")
-    async def get_object_info(request):
-        request.app.router._frozen = False
-        res = await node_info(list(nodes.NODE_CLASS_MAPPINGS.keys()))
-        request.app.router._frozen = True
-        return res
-    
-    @routes.get("/object_info/{node_class}")
-    async def get_object_info_node(request):
-        node_class = request.match_info.get("node_class", None)
-        if (node_class is not None) and (node_class in nodes.NODE_CLASS_MAPPINGS):
-            request.app.router._frozen = False
-            res = await node_info([node_class])
-            request.app.router._frozen = True
-            return res
-        else:
-            return web.json_response({})
-    ```
-
-</details>
-
----
-
-> `pydantic_core._pydantic_core.ValidationError`
-
-<details>
-<summary>Details</summary>
-
-Node authors will sometimes make mistakes which causes validation to fail and the node to not be loaded.
+Node authors will sometimes make mistakes which causes validation to fail and the node to not be added to the DB or loaded.
 
 | Repo | Issue | Fix PR | Resolved |
 | --- | --- | --- | --- |
@@ -54,14 +13,6 @@ Node authors will sometimes make mistakes which causes validation to fail and th
 | [mikey_nodes](https://github.com/bash-j/mikey_nodes) | `haldCLUT.return_names` is string instead of tuple | [#31](https://github.com/bash-j/mikey_nodes/pull/31) | July 27, 2024 |
 | [ComfyUI-HelperNodes](https://github.com/teward/ComfyUI-Helper-Nodes) | Nodes have null `return_names` from base class | | _ |
 
-
-</details>
-
----
-
-# Known Problematic Modules
-
--
 
 # Always Initialize White List
 
