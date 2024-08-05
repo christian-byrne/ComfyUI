@@ -8,6 +8,22 @@ from PIL import Image
 import logging
 import itertools
 
+
+# ----------------------------- Monitoring Mixin ----------------------------- #
+
+import objgraph
+import tracemalloc
+from comfy.performance_utils.config import Config
+from comfy.performance_utils.log import Logger
+from comfy.performance_utils.peformance_logging import report_time_taken, count_total_calls, print_func_frame_details, profile
+
+config = Config()
+logger = Logger(__name__, config["log_level"])()
+
+# ----------------------------- ---------------- ----------------------------- #
+
+@count_total_calls
+@report_time_taken
 def load_torch_file(ckpt, safe_load=False, device=None):
     if device is None:
         device = torch.device("cpu")
@@ -36,6 +52,8 @@ def save_torch_file(sd, ckpt, metadata=None):
     else:
         safetensors.torch.save_file(sd, ckpt)
 
+@count_total_calls
+@report_time_taken
 def calculate_parameters(sd, prefix=""):
     params = 0
     for k in sd.keys():
@@ -62,6 +80,8 @@ def state_dict_key_replace(state_dict, keys_to_replace):
             state_dict[keys_to_replace[x]] = state_dict.pop(x)
     return state_dict
 
+@count_total_calls
+@report_time_taken
 def state_dict_prefix_replace(state_dict, replace_prefix, filter_keys=False):
     if filter_keys:
         out = {}
@@ -75,6 +95,8 @@ def state_dict_prefix_replace(state_dict, replace_prefix, filter_keys=False):
     return out
 
 
+@count_total_calls
+@report_time_taken
 def transformers_convert(sd, prefix_from, prefix_to, number):
     keys_to_replace = {
         "{}positional_embedding": "{}embeddings.position_embedding.weight",
@@ -116,6 +138,8 @@ def transformers_convert(sd, prefix_from, prefix_to, number):
 
     return sd
 
+@count_total_calls
+@report_time_taken
 def clip_text_transformers_convert(sd, prefix_from, prefix_to):
     sd = transformers_convert(sd, prefix_from, "{}text_model.".format(prefix_to), 32)
 
@@ -197,6 +221,8 @@ UNET_MAP_BASIC = {
     ("time_embed.2.bias", "time_embedding.linear_2.bias")
 }
 
+@count_total_calls
+@report_time_taken
 def unet_to_diffusers(unet_config):
     if "num_res_blocks" not in unet_config:
         return {}
@@ -263,6 +289,8 @@ def unet_to_diffusers(unet_config):
 
     return diffusers_unet_map
 
+@count_total_calls
+@report_time_taken
 def swap_scale_shift(weight):
     shift, scale = weight.chunk(2, dim=0)
     new_weight = torch.cat([scale, shift], dim=0)
@@ -307,6 +335,8 @@ MMDIT_MAP_BLOCK = {
     ("x_block.mlp.fc2.weight", "ff.net.2.weight"),
 }
 
+@count_total_calls
+@report_time_taken
 def mmdit_to_diffusers(mmdit_config, output_prefix=""):
     key_map = {}
 
@@ -346,6 +376,8 @@ def mmdit_to_diffusers(mmdit_config, output_prefix=""):
     return key_map
 
 
+@count_total_calls
+@report_time_taken
 def auraflow_to_diffusers(mmdit_config, output_prefix=""):
     n_double_layers = mmdit_config.get("n_double_layers", 0)
     n_layers = mmdit_config.get("n_layers", 0)
@@ -415,6 +447,8 @@ def auraflow_to_diffusers(mmdit_config, output_prefix=""):
 
     return key_map
 
+@count_total_calls
+@report_time_taken
 def repeat_to_batch_size(tensor, batch_size, dim=0):
     if tensor.shape[dim] > batch_size:
         return tensor.narrow(dim, 0, batch_size)
@@ -422,6 +456,8 @@ def repeat_to_batch_size(tensor, batch_size, dim=0):
         return tensor.repeat(dim * [1] + [math.ceil(batch_size / tensor.shape[dim])] + [1] * (len(tensor.shape) - 1 - dim)).narrow(dim, 0, batch_size)
     return tensor
 
+@count_total_calls
+@report_time_taken
 def resize_to_batch_size(tensor, batch_size):
     in_batch_size = tensor.shape[0]
     if in_batch_size == batch_size:
@@ -442,6 +478,8 @@ def resize_to_batch_size(tensor, batch_size):
 
     return output
 
+@count_total_calls
+@report_time_taken
 def convert_sd_to(state_dict, dtype):
     keys = list(state_dict.keys())
     for k in keys:
@@ -456,6 +494,8 @@ def safetensors_header(safetensors_path, max_size=100*1024*1024):
             return None
         return f.read(length_of_header)
 
+@count_total_calls
+@report_time_taken
 def set_attr(obj, attr, value):
     attrs = attr.split(".")
     for name in attrs[:-1]:
@@ -481,6 +521,8 @@ def get_attr(obj, attr):
         obj = getattr(obj, name)
     return obj
 
+@count_total_calls
+@report_time_taken
 def bislerp(samples, width, height):
     def slerp(b1, b2, r):
         '''slerps batches b1, b2 according to ratio r, batches should be flat e.g. NxC'''

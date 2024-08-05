@@ -6,6 +6,17 @@ import torch
 import sys
 import platform
 
+# ----------------------------- Monitoring Mixin ----------------------------- #
+
+from comfy.performance_utils.config import Config
+from comfy.performance_utils.log import Logger
+from comfy.performance_utils.peformance_logging import report_time_taken, count_total_calls, print_func_frame_details
+
+config = Config()
+logger = Logger(__name__, config["log_level"])()
+
+# ----------------------------- ---------------- ----------------------------- #
+
 class VRAMState(Enum):
     DISABLED = 0    #No vram present: no need to move models to vram
     NO_VRAM = 1     #Very low vram: enable all the options to save vram
@@ -87,6 +98,9 @@ def get_torch_device():
         else:
             return torch.device(torch.cuda.current_device())
 
+
+@report_time_taken
+@count_total_calls
 def get_total_memory(dev=None, torch_total_too=False):
     global directml_enabled
     if dev is None:
@@ -254,6 +268,8 @@ except:
 
 current_loaded_models = []
 
+@report_time_taken
+@count_total_calls
 def module_size(module):
     module_mem = 0
     sd = module.state_dict()
@@ -279,6 +295,9 @@ class LoadedModel:
         else:
             return self.model_memory()
 
+    @report_time_taken
+    @count_total_calls
+    @print_func_frame_details
     def model_load(self, lowvram_model_memory=0, force_patch_weights=False):
         patch_model_to = self.device
 
@@ -320,6 +339,9 @@ class LoadedModel:
 def minimum_inference_memory():
     return (1024 * 1024 * 1024) * 1.2
 
+@report_time_taken
+@count_total_calls
+@print_func_frame_details
 def unload_model_clones(model, unload_weights_only=True, force_unload=True):
     to_unload = []
     for i in range(len(current_loaded_models)):
@@ -349,6 +371,9 @@ def unload_model_clones(model, unload_weights_only=True, force_unload=True):
 
     return unload_weight
 
+@report_time_taken
+@count_total_calls
+@print_func_frame_details
 def free_memory(memory_required, device, keep_loaded=[]):
     unloaded_model = []
     can_unload = []
@@ -379,6 +404,9 @@ def free_memory(memory_required, device, keep_loaded=[]):
             if mem_free_torch > mem_free_total * 0.25:
                 soft_empty_cache()
 
+@report_time_taken
+@count_total_calls
+@print_func_frame_details
 def load_models_gpu(models, memory_required=0, force_patch_weights=False, minimum_memory_required=None):
     global vram_state
 
@@ -475,6 +503,9 @@ def loaded_models(only_currently_used=False):
         output.append(m.model)
     return output
 
+@report_time_taken
+@count_total_calls
+@print_func_frame_details
 def cleanup_models(keep_clone_weights_loaded=False):
     to_delete = []
     for i in range(len(current_loaded_models)):
@@ -785,6 +816,9 @@ def force_upcast_attention_dtype():
     else:
         return None
 
+@report_time_taken
+@count_total_calls
+@print_func_frame_details
 def get_free_memory(dev=None, torch_free_too=False):
     global directml_enabled
     if dev is None:

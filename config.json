@@ -1,0 +1,55 @@
+{
+  "log_level": "IFNO",
+  "log_file": "app.log",
+  "logfile_policy": {
+    "unlimited_logs": true,
+    "max_logs": 10,
+    "compress" : false,
+    "delete" : true,
+    "prompt" : false
+  },
+  "profiler": {
+    "enabled": false,
+    "auto_open_visualization": true,
+    "auto_open_stats": false,
+    "print_stats": false,
+    "stats_filename": "stats.prof"
+  },
+  "tracemalloc": {
+    "enabled": true,
+    "results_limit": 16,
+    "print": false,
+    "log": true
+  },
+  "objgraph": {
+    "enabled": false,
+    "items_limit": 32,
+    "print": true,
+    "log": true
+  },
+  "time_reporting": {
+    "enabled": true,
+    "start_message": true,
+    "end_message": true,
+    "threshold_to_log": 0.001,
+    "print": true,
+    "log": false
+  },
+  "frame_details_reporting": {
+    "enabled": false,
+    "args": true,
+    "kwargs": true,
+    "return": false,
+    "frame": false,
+    "code": false,
+    "locals": false,
+    "globals": false,
+    "print": true,
+    "log": true
+  },
+  "call_counter": {
+    "enabled": false,
+    "print": false,
+    "log": true
+  }
+}

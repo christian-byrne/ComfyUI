@@ -7,7 +7,9 @@ import folder_paths
 import time
 from comfy.cli_args import args
 
+import comfy.performance_utils as pu
 
+@pu.report_time_taken
 def execute_prestartup_script():
     def execute_script(script_path):
         module_name = os.path.splitext(script_path)[0]
