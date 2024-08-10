@@ -20,6 +20,7 @@ Edit the whitelist in [`load_custom_node`](./nodes.py) function of `nodes.py`.
 
 | Module | Reason(s) |
 | --- | --- |
+| ComfyUI-VideoHelperSuite | 1d |
 | rgthree-comfy | 1c |
 | cg-use-everywhere | 3 |
 | comfy_mtb | 1a |
@@ -31,15 +32,16 @@ Edit the whitelist in [`load_custom_node`](./nodes.py) function of `nodes.py`.
 | comfyui-mixlab-nodes | 1a |
 | AIGODLIKE-ComfyUI-Translation | 1b, 3 |
 
-
 ### Reasons (Required)
 
 1. Module interacts with frontend via backend, and it happens whether or not their nodes are being used 
    1. Creating routes on PromptServer for a background service
    2. Calls external APIs in order to initialize frontend services that are unrelated to any particular node
    3. Frontend extension files are managed by backend service
-   
+   4. Node class attributes like `INPUT_TYPES`, `OUTPUTS` are set dynamically and change from process to process (e.g., an input is a combo of files in a folder which often changes)
+
 2. A newly downloaded module imports an older module (e.g., a custom node imports `nodes.latent`, so we need to always initialize `nodes.latent`)
+
 
 ### Reasons (Optional)
 
